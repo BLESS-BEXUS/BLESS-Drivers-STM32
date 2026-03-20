@@ -8,10 +8,10 @@ This repository contains C drivers for various sensors used in the **BLESS** (Be
 ## Supported Hardware
 
 ### 1. INA219 - Current & Power Monitor
-* [cite_start]**Bus Voltage Sensing**: Measures bus voltages from 0 to 26 V[cite: 12, 569].
-* **Crucial Calibration**: The `INA219_INIT` function requires the **Maximum Expected Current**. This value is essential to calculate the internal Calibration Register and define the `Current_LSB`[cite: 697, 701, 703].
-* [cite_start]**Data Handling**: Bus Voltage Register bits are shifted right by three positions and multiplied by a 4-mV LSB[cite: 716, 717, 1220].
-* [cite_start]**Addressing**: Supports up to 16 programmable I2C addresses via A0 and A1 pins[cite: 12, 784].
+* [cite_start]**Bus Voltage Sensing**: Measures bus voltages from 0 to 26 V.
+* **Crucial Calibration**: The `INA219_INIT` function requires the **Maximum Expected Current**. This value is essential to calculate the internal Calibration Register and define the `Current_LSB`.
+* [cite_start]**Data Handling**: Bus Voltage Register bits are shifted right by three positions and multiplied by a 4-mV LSB.
+* [cite_start]**Addressing**: Supports up to 16 programmable I2C addresses via A0 and A1 pins.
 
 ### 2. TMP102 - Digital Temperature Sensor
 * **Range**: Senses temperature from -40ºC to +125ºC.
@@ -32,7 +32,7 @@ This repository contains C drivers for various sensors used in the **BLESS** (Be
 
 1. Add the required sensor files from the `Drivers/` directory to your STM32CubeIDE project (typically under `Core/Inc` and `Core/Src`).
 2. Enable the corresponding I2C or SPI peripherals in your STM32CubeMX configuration (`.ioc` file).
-3. [cite_start]**Important**: When calling `INA219_INIT`, you must provide the specific `Max_Expected_Current` for your application to ensure accurate power and current readings[cite: 703, 741].
+3. [cite_start]**Important**: When calling `INA219_INIT`, you must provide the specific `Max_Expected_Current` for your application to ensure accurate power and current readings.
 
 ## Usage
 For a complete demonstration of how to initialize the drivers and handle sensor data acquisition (including error flagging and data scaling), please refer to the provided example:
